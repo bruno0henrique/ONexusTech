@@ -1,67 +1,80 @@
-import { motion } from 'framer-motion';
 import { FeatureCard } from './components/FeatureCard';
 import { MindMapDemo } from './components/MindMapDemo';
 import { SectionTitle } from './components/SectionTitle';
 
 const stats = [
-  'Decisões em segundos',
-  'Automação real',
+  'Processos automatizados',
+  'Decisões mais claras',
+  'Dados mais úteis',
   'Menos retrabalho',
-  'Clareza estratégica',
 ];
 
-const features = [
+const solutions = [
   {
-    icon: '⚡',
-    title: 'Automação de tarefas reais',
+    icon: 'IA',
+    title: 'Sistemas com IA',
     description:
-      'Transforme objetivos em ações, responsáveis e próximos passos sem perder tempo em trabalho manual.',
+      'Criamos ferramentas inteligentes para automatizar tarefas, organizar informações e apoiar decisões.',
   },
   {
-    icon: '◈',
-    title: 'Geração estruturada de ideias',
+    icon: '<>',
+    title: 'Integrações e automações',
     description:
-      'Organize caminhos, hipóteses e prioridades a partir de um tema simples e do contexto do negócio.',
+      'Conectamos sistemas, APIs e fluxos internos para reduzir trabalho manual e erros operacionais.',
   },
   {
-    icon: '●●',
-    title: 'Alinhamento automático de equipe',
+    icon: 'DB',
+    title: 'Análise de dados aplicada',
     description:
-      'Conecte decisões, tarefas e prioridades para manter o time trabalhando na mesma direção.',
+      'Transformamos dados de operação, estoque, vendas ou produtividade em insights claros e acionáveis.',
   },
   {
-    icon: '▣',
-    title: 'Análise orientada a resultado',
+    icon: 'UI',
+    title: 'Dashboards e interfaces',
     description:
-      'Converta informações soltas em sínteses claras para decidir com mais segurança.',
+      'Criamos experiências simples e visuais para equipes acompanharem o que realmente importa.',
   },
   {
-    icon: '↔',
-    title: 'Fluxos conectados',
+    icon: 'ON',
+    title: 'Produtos próprios',
     description:
-      'Estruture ideias, planos e execuções em uma visão única para reduzir ruído operacional.',
+      'Desenvolvemos soluções como Synapse IA, Nexus Engine e Apex Kinetic para resolver dores específicas.',
   },
   {
-    icon: '🔒',
-    title: 'Contexto protegido',
+    icon: '?',
+    title: 'Consultoria prática com IA',
     description:
-      'Mantenha o foco no que importa para a empresa, com uma experiência simples e controlada.',
+      'Ajudamos empresas a encontrar onde a IA pode gerar valor real sem complexidade desnecessária.',
   },
 ];
 
-const useCases = [
+const products = [
   {
-    title: 'Gestão',
-    text: 'Priorize decisões, desdobre planos e transforme objetivos em execução acompanhável.',
+    title: 'Nexus Engine',
+    description:
+      'Analisa estoque, identifica capital parado, rupturas, vencimentos e oportunidades de lucro.',
+    cta: 'Conhecer Nexus Engine',
   },
   {
-    title: 'Comercial',
-    text: 'Organize oportunidades, objeções e próximos passos para acelerar negociações.',
+    title: 'Synapse IA',
+    description:
+      'Organiza ideias, estratégias e tarefas com IA para transformar objetivos em planos executáveis.',
+    cta: 'Conhecer Synapse IA',
   },
   {
-    title: 'Operações',
-    text: 'Reduza retrabalho criando fluxos claros para processos, tarefas e responsáveis.',
+    title: 'Apex Kinetic',
+    description:
+      'Aplicação fitness em desenvolvimento para treinos, evolução e rotina de performance.',
+    cta: 'Ver projeto',
   },
+];
+
+const steps = [
+  'Entendemos o problema',
+  'Mapeamos dados e processos',
+  'Criamos a solução com IA',
+  'Testamos com uso real',
+  'Evoluímos com base no resultado',
 ];
 
 function App() {
@@ -74,62 +87,71 @@ function App() {
               ON
             </span>
             <span className="text-xl">
-              Synapse <span className="text-nexus">IA</span>
+              O <span className="text-nexus">Nexus</span>
             </span>
           </a>
 
           <div className="hidden items-center gap-10 text-sm font-semibold text-slate-400 md:flex">
-            <a href="#produto" className="transition hover:text-white">
-              Produto
+            <a href="#solucoes" className="transition hover:text-white">
+              Soluções
             </a>
-            <a href="#demo" className="transition hover:text-white">
-              Demonstração
+            <a href="#produtos" className="transition hover:text-white">
+              Produtos
             </a>
-            <a href="#times" className="transition hover:text-white">
-              Para times
+            <a href="#como-funciona" className="transition hover:text-white">
+              Como funciona
             </a>
             <a href="#contato" className="transition hover:text-white">
               Contato
             </a>
           </div>
 
-          <a className="rounded-lg border border-white/25 px-5 py-3 text-sm font-black transition hover:border-nexus hover:bg-nexus/10" href="#contato">
-            Começar grátis
+          <a
+            className="rounded-lg border border-white/25 px-4 py-3 text-center text-sm font-black transition hover:border-nexus hover:bg-nexus/10 md:px-5"
+            href="#contato"
+          >
+            Falar sobre meu projeto
           </a>
         </nav>
       </header>
 
-      <section id="produto" className="relative px-5 pb-16 pt-40 md:px-8 md:pb-24 md:pt-44">
+      <section className="relative px-5 pb-16 pt-40 md:px-8 md:pb-24 md:pt-44">
         <div className="absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-nexus/20 blur-[110px]" />
-        <motion.div animate={{ y: [8, 0] }} transition={{ duration: 0.55 }} className="relative mx-auto max-w-4xl text-center">
+        <div className="relative mx-auto max-w-5xl text-center">
           <div className="mx-auto mb-9 inline-flex rounded-full border border-nexus/50 bg-nexus/15 px-5 py-2 text-[11px] font-black uppercase tracking-[0.28em] text-glow">
-            IA aplicada · estratégia
+            Tecnologia · automação · IA
           </div>
 
           <h1 className="text-balance text-5xl font-black leading-[0.92] tracking-normal text-white md:text-7xl">
-            Transforme ideias em decisões com{' '}
+            Criamos sistemas com IA para transformar processos em{' '}
             <span className="block bg-gradient-to-r from-nexus to-glow bg-clip-text text-transparent">
-              IA
+              resultado
             </span>
           </h1>
 
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl">
-            Crie, organize e execute estratégias com inteligência artificial aplicada ao seu contexto real.
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
+            A O Nexus desenvolve soluções inteligentes, automações e integrações com IA para empresas que querem decidir melhor, economizar tempo e crescer com mais eficiência.
           </p>
 
           <p className="mx-auto mt-5 max-w-3xl text-sm font-semibold leading-7 text-slate-400 md:text-base">
-            O Synapse faz parte do ecossistema O Nexus — soluções com IA para melhorar decisões e resultados de empresas.
+            Soluções sob medida e produtos próprios para aplicar IA de forma prática no dia a dia das empresas.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href="#contato" className="w-full rounded-lg border border-white/25 bg-white px-6 py-3.5 text-center text-sm font-black text-ink transition hover:bg-nexus hover:text-white sm:w-auto">
-              Começar grátis →
+            <a
+              href="#contato"
+              className="w-full rounded-lg border border-white/25 bg-white px-6 py-3.5 text-center text-sm font-black text-ink transition hover:bg-nexus hover:text-white sm:w-auto"
+            >
+              Falar sobre meu projeto
             </a>
-            <a href="#demo" className="w-full rounded-lg border border-white/25 px-6 py-3.5 text-center text-sm font-black transition hover:border-nexus hover:bg-nexus/10 sm:w-auto">
-              Ver demonstração
+            <a
+              href="#produtos"
+              className="w-full rounded-lg border border-white/25 px-6 py-3.5 text-center text-sm font-black transition hover:border-nexus hover:bg-nexus/10 sm:w-auto"
+            >
+              Conhecer produtos
             </a>
           </div>
-        </motion.div>
+        </div>
 
         <div className="mx-auto mt-16 grid max-w-5xl grid-cols-2 gap-px border-y border-white/10 bg-white/10 md:grid-cols-4">
           {stats.map((stat) => (
@@ -140,39 +162,63 @@ function App() {
         </div>
       </section>
 
-      <section id="demo" className="px-5 py-14 md:px-8 md:py-20">
+      <section className="px-5 py-14 md:px-8 md:py-20">
         <SectionTitle
-          eyebrow="Veja em ação"
-          title="Da ideia à decisão executável"
-          subtitle="A IA transforma um objetivo simples em caminhos claros, conectados e acionáveis."
+          eyebrow="Mapa operacional"
+          title="Da operação à decisão"
+          subtitle="Conectamos dados, processos e IA para transformar informações soltas em ações claras."
         />
         <MindMapDemo />
       </section>
 
-      <section className="px-5 py-14 md:px-8 md:py-20">
+      <section id="solucoes" className="px-5 py-14 md:px-8 md:py-20">
         <SectionTitle
-          eyebrow="Funcionalidades"
-          title="Tudo que seu time precisa"
-          subtitle="Do planejamento à execução — o Synapse em cada etapa."
+          eyebrow="Soluções"
+          title="O que a O Nexus constrói"
+          subtitle="Sistemas, automações e produtos pensados para reduzir ruído operacional e gerar resultado real."
         />
         <div className="mx-auto grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <FeatureCard key={feature.title} {...feature} />
+          {solutions.map((solution) => (
+            <FeatureCard key={solution.title} {...solution} />
           ))}
         </div>
       </section>
 
-      <section id="times" className="px-5 py-14 md:px-8 md:py-20">
+      <section id="produtos" className="px-5 py-14 md:px-8 md:py-20">
         <SectionTitle
-          eyebrow="Para empresas"
-          title="Clareza para áreas que precisam decidir"
-          subtitle="Use IA para reduzir ruído, organizar contexto e transformar intenção em plano."
+          eyebrow="Produtos"
+          title="Produtos do ecossistema O Nexus"
+          subtitle="Soluções próprias para problemas específicos de operação, estratégia e performance."
         />
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
-          {useCases.map((item) => (
-            <article key={item.title} className="rounded-2xl border border-line bg-panel p-7">
-              <p className="mb-4 text-sm font-black uppercase tracking-[0.22em] text-glow">{item.title}</p>
-              <p className="leading-7 text-slate-300">{item.text}</p>
+          {products.map((product) => (
+            <article key={product.title} className="rounded-2xl border border-line bg-panel p-7">
+              <p className="mb-4 text-sm font-black uppercase tracking-[0.22em] text-glow">
+                {product.title}
+              </p>
+              <p className="min-h-[112px] leading-7 text-slate-300">{product.description}</p>
+              <a
+                href="#contato"
+                className="mt-6 inline-flex rounded-lg border border-white/20 px-4 py-3 text-sm font-black transition hover:border-nexus hover:bg-nexus/10"
+              >
+                {product.cta}
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="como-funciona" className="px-5 py-14 md:px-8 md:py-20">
+        <SectionTitle
+          eyebrow="Processo"
+          title="Como trabalhamos"
+          subtitle="Criamos soluções com foco no problema real, no uso diário e no resultado que a empresa precisa acompanhar."
+        />
+        <div className="mx-auto grid max-w-6xl gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-5">
+          {steps.map((step, index) => (
+            <article key={step} className="bg-panel p-6">
+              <p className="mb-5 text-sm font-black text-glow">0{index + 1}</p>
+              <h3 className="text-lg font-black leading-snug">{step}</h3>
             </article>
           ))}
         </div>
@@ -181,17 +227,23 @@ function App() {
       <section id="contato" className="px-5 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-6xl rounded-[24px] border border-nexus/40 bg-gradient-to-br from-nexus/20 via-panel to-panel px-6 py-16 text-center shadow-violet md:px-10">
           <h2 className="mx-auto max-w-3xl text-4xl font-black leading-tight md:text-5xl">
-            Pronto para transformar sua próxima ideia em decisão?
+            Tem um processo que poderia ser mais inteligente?
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-slate-300">
-            Comece gratuitamente. Sem cartão de crédito. Cancele quando quiser.
+            Vamos transformar uma dor operacional em uma solução simples, útil e conectada ao seu negócio.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href="#" className="w-full rounded-lg border border-white/25 bg-white px-6 py-3.5 text-sm font-black text-ink transition hover:bg-nexus hover:text-white sm:w-auto">
-              Criar conta grátis →
+            <a
+              href="#"
+              className="w-full rounded-lg border border-white/25 bg-white px-6 py-3.5 text-sm font-black text-ink transition hover:bg-nexus hover:text-white sm:w-auto"
+            >
+              Falar sobre meu projeto
             </a>
-            <a href="#demo" className="w-full rounded-lg border border-white/25 px-6 py-3.5 text-sm font-black transition hover:border-nexus hover:bg-nexus/10 sm:w-auto">
-              Ver demonstração
+            <a
+              href="#produtos"
+              className="w-full rounded-lg border border-white/25 px-6 py-3.5 text-sm font-black transition hover:border-nexus hover:bg-nexus/10 sm:w-auto"
+            >
+              Conhecer produtos
             </a>
           </div>
         </div>
@@ -199,7 +251,7 @@ function App() {
 
       <footer className="border-t border-white/10 px-5 py-8 md:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
-          <p>Synapse IA · O Nexus · 2026</p>
+          <p>O Nexus · Tecnologia, automação e IA · 2026</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-white">
               Privacidade
