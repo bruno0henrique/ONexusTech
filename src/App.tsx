@@ -157,7 +157,7 @@ function App() {
 
         <div className="mx-auto mt-16 grid max-w-5xl grid-cols-2 gap-px border-y border-white/10 bg-white/10 md:grid-cols-4">
           {stats.map((stat) => (
-            <div key={stat} className="bg-ink px-4 py-8 text-center">
+            <div key={stat} className="bg-ink/95 px-4 py-8 text-center">
               <p className="text-xl font-black leading-tight md:text-2xl">{stat}</p>
             </div>
           ))}
@@ -194,7 +194,7 @@ function App() {
         />
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
           {products.map((product) => (
-            <article key={product.title} className="rounded-2xl border border-line bg-panel p-7">
+            <article key={product.title} className="rounded-2xl border border-line bg-panel/95 p-7 shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
               <p className="mb-4 text-sm font-black uppercase tracking-[0.22em] text-glow">
                 {product.title}
               </p>
@@ -218,7 +218,7 @@ function App() {
         />
         <div className="mx-auto grid max-w-6xl gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-5">
           {steps.map((step, index) => (
-            <article key={step} className="bg-panel p-6">
+            <article key={step} className="bg-panel/95 p-6">
               <p className="mb-5 text-sm font-black text-glow">0{index + 1}</p>
               <h3 className="text-lg font-black leading-snug">{step}</h3>
             </article>

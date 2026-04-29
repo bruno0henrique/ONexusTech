@@ -11,7 +11,7 @@ export function FeatureCard({ icon, title, description }: FeatureCardProps) {
     <motion.article
       whileHover={{ y: -6 }}
       transition={{ type: 'spring', stiffness: 280, damping: 22 }}
-      className="min-h-[218px] rounded-2xl border border-line bg-panel p-7"
+      className="min-h-[218px] rounded-2xl border border-line bg-panel/95 p-7 shadow-[0_24px_70px_rgba(0,0,0,0.28)]"
     >
       <div className="mb-5 grid h-11 w-11 place-items-center rounded-lg bg-nexus/20 text-lg font-black text-glow">
         {icon}

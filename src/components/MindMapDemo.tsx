@@ -35,7 +35,7 @@ const nodes = [
 
 export function MindMapDemo() {
   return (
-    <div className="mx-auto max-w-7xl rounded-[24px] border border-line bg-panel/70 p-5 shadow-violet md:p-8">
+    <div className="mx-auto max-w-7xl rounded-[24px] border border-line bg-panel/95 p-5 shadow-violet md:p-8">
       <div className="mb-5 flex items-center gap-3 border-b border-white/10 pb-5">
         <span className="h-3 w-3 rounded-full bg-red-400" />
         <span className="h-3 w-3 rounded-full bg-amber-400" />
