@@ -4,14 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#070711',
-        panel: '#0e0d1c',
-        line: '#2c174e',
-        nexus: '#9b5cff',
-        glow: '#c16cff',
+        ink: '#040812',
+        panel: '#07101f',
+        line: '#12385f',
+        nexus: '#2f8cff',
+        glow: '#5f7cff',
       },
       boxShadow: {
-        violet: '0 0 70px rgba(126, 58, 242, 0.25)',
+        violet: '0 0 70px rgba(47, 140, 255, 0.2)',
       },
     },
   },

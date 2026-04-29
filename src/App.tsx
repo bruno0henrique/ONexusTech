@@ -79,22 +79,17 @@ const steps = [
 
 function App() {
   return (
-    <main className="min-h-screen overflow-hidden bg-ink text-white">
+    <main className="relative min-h-screen overflow-hidden bg-ink text-white">
+      <NeuralBackdrop />
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur-xl">
         <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 md:px-8">
           <a href="#" className="flex items-center gap-3 font-black tracking-tight">
-            <span className="relative h-9 w-9 overflow-hidden rounded-lg border border-white/10 bg-white/5">
+            <span className="block h-8 w-32 overflow-hidden md:h-10 md:w-56">
               <img
                 src="/logo.png"
                 alt="O Nexus"
-                className="absolute -left-5 -top-6 h-[88px] w-[132px] max-w-none"
+                className="h-full w-full origin-left scale-[1.55] object-contain object-left md:scale-[2.1]"
               />
-            </span>
-            <span className="text-xl">
-              O{' '}
-              <span className="bg-gradient-to-r from-[#38bdf8] to-nexus bg-clip-text text-transparent">
-                Nexus
-              </span>
             </span>
           </a>
 
@@ -114,7 +109,7 @@ function App() {
           </div>
 
           <a
-            className="rounded-lg border border-white/25 px-4 py-3 text-center text-sm font-black transition hover:border-nexus hover:bg-nexus/10 md:px-5"
+            className="rounded-lg border border-white/25 px-3 py-3 text-center text-xs font-black transition hover:border-nexus hover:bg-nexus/10 md:px-5 md:text-sm"
             href="#contato"
           >
             Falar sobre meu projeto
@@ -123,7 +118,7 @@ function App() {
       </header>
 
       <section className="relative px-5 pb-16 pt-40 md:px-8 md:pb-24 md:pt-44">
-        <div className="absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-nexus/20 blur-[110px]" />
+        <div className="absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-nexus/15 blur-[120px]" />
         <div className="relative mx-auto max-w-5xl text-center">
           <div className="mx-auto mb-9 inline-flex rounded-full border border-nexus/50 bg-nexus/15 px-5 py-2 text-[11px] font-black uppercase tracking-[0.28em] text-glow">
             Tecnologia · automação · IA
@@ -131,7 +126,7 @@ function App() {
 
           <h1 className="text-balance text-5xl font-black leading-[0.92] tracking-normal text-white md:text-7xl">
             Criamos sistemas com IA para transformar processos em{' '}
-            <span className="block bg-gradient-to-r from-nexus to-glow bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-[#38bdf8] to-nexus bg-clip-text text-transparent">
               resultado
             </span>
           </h1>
@@ -273,6 +268,21 @@ function App() {
         </div>
       </footer>
     </main>
+  );
+}
+
+function NeuralBackdrop() {
+  return (
+    <div className="neural-backdrop" aria-hidden="true">
+      <div className="neural-light neural-light-one" />
+      <div className="neural-light neural-light-two" />
+      <svg className="neural-lines" viewBox="0 0 1200 900" preserveAspectRatio="none">
+        <path d="M95 210 C250 135 380 290 520 220 S800 115 1035 230" />
+        <path d="M170 620 C330 455 460 715 630 520 S850 345 1080 455" />
+        <path d="M260 120 C370 330 545 350 690 250 S930 255 1130 90" />
+        <path d="M60 420 C245 380 340 505 500 460 S720 315 930 360" />
+      </svg>
+    </div>
   );
 }
 
