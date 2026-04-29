@@ -1,0 +1,106 @@
+import { motion } from 'framer-motion';
+
+const nodes = [
+  {
+    label: 'Prioridade',
+    text: 'O que move o resultado agora.',
+    className: 'left-[7%] top-[46%]',
+  },
+  {
+    label: 'Contexto',
+    text: 'Dados, metas e restrições reais.',
+    className: 'left-[38%] top-[16%]',
+  },
+  {
+    label: 'Caminhos',
+    text: 'Opções claras para avançar.',
+    className: 'right-[10%] top-[30%]',
+  },
+  {
+    label: 'Impacto',
+    text: 'Ganho esperado e esforço.',
+    className: 'right-[7%] top-[48%]',
+  },
+  {
+    label: 'Execução',
+    text: 'Responsáveis e próximos passos.',
+    className: 'right-[18%] bottom-[15%]',
+  },
+  {
+    label: 'Riscos',
+    text: 'Pontos de atenção antes de decidir.',
+    className: 'left-[16%] bottom-[16%]',
+  },
+  {
+    label: 'Indicadores',
+    text: 'Como acompanhar progresso.',
+    className: 'left-[38%] bottom-[6%]',
+  },
+];
+
+export function MindMapDemo() {
+  return (
+    <div className="mx-auto max-w-7xl rounded-[24px] border border-line bg-panel/70 p-5 shadow-violet md:p-8">
+      <div className="mb-5 flex items-center gap-3 border-b border-white/10 pb-5">
+        <span className="h-3 w-3 rounded-full bg-red-400" />
+        <span className="h-3 w-3 rounded-full bg-amber-400" />
+        <span className="h-3 w-3 rounded-full bg-emerald-400" />
+        <span className="ml-2 text-sm font-bold text-slate-400">
+          Synapse IA — Mapa de decisão
+        </span>
+      </div>
+
+      <div className="relative mx-auto h-[560px] overflow-hidden rounded-2xl bg-[#0a0918] md:h-[560px]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(155,92,255,0.18),transparent_42%)]" />
+        <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
+          <g stroke="#8d4cff" strokeDasharray="5 8" strokeWidth="2" opacity="0.65">
+            <path d="M500 280 L160 285" />
+            <path d="M500 280 L500 105" />
+            <path d="M500 280 L770 170" />
+            <path d="M500 280 L850 290" />
+            <path d="M500 280 L690 455" />
+            <path d="M500 280 L270 455" />
+            <path d="M500 280 L500 505" />
+          </g>
+          <g fill="#a855f7">
+            <circle cx="160" cy="285" r="5" />
+            <circle cx="500" cy="105" r="5" />
+            <circle cx="770" cy="170" r="5" />
+            <circle cx="850" cy="290" r="5" />
+            <circle cx="690" cy="455" r="5" />
+            <circle cx="270" cy="455" r="5" />
+            <circle cx="500" cy="505" r="5" />
+          </g>
+        </svg>
+
+        <div className="absolute left-1/2 top-[28%] z-10 w-40 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-glow/70 bg-gradient-to-br from-nexus to-[#5b21b6] px-4 py-4 text-center shadow-violet md:top-1/2 md:w-56 md:px-6 md:py-5">
+          <div className="mx-auto mb-2 grid h-7 w-7 place-items-center rounded-full border border-white/60 text-sm">
+            ◎
+          </div>
+          <p className="text-xs font-black leading-tight md:text-sm">Decisão executável para o negócio</p>
+        </div>
+
+        {nodes.map((node, index) => (
+          <motion.div
+            key={node.label}
+            animate={{ y: [0, index % 2 === 0 ? -4 : 4, 0] }}
+            transition={{ duration: 5 + index * 0.2, repeat: Infinity, ease: 'easeInOut' }}
+            className={`absolute z-10 hidden w-48 rounded-xl border border-glow/50 bg-nexus/10 p-4 md:block ${node.className}`}
+          >
+            <p className="text-xs font-black">{node.label}</p>
+            <p className="mt-1 text-[11px] leading-4 text-slate-400">{node.text}</p>
+          </motion.div>
+        ))}
+
+        <div className="absolute inset-x-4 bottom-4 z-20 grid gap-3 md:hidden">
+          {nodes.slice(0, 4).map((node) => (
+            <div key={node.label} className="rounded-xl border border-glow/40 bg-nexus/10 p-3">
+              <p className="text-xs font-black">{node.label}</p>
+              <p className="mt-1 text-[11px] leading-4 text-slate-400">{node.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
