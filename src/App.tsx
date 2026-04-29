@@ -52,7 +52,7 @@ const products = [
   {
     title: 'Nexus Engine',
     description:
-      'Analisa estoque, identifica capital parado, rupturas, vencimentos e oportunidades de lucro.',
+      'Analisa estoque e identifica oportunidades de lucro, perdas e capital parado.',
     cta: 'Conhecer Nexus Engine',
   },
   {
@@ -64,7 +64,7 @@ const products = [
   {
     title: 'Apex Kinetic',
     description:
-      'Aplicação fitness em desenvolvimento para treinos, evolução e rotina de performance.',
+      'Aplicação fitness em desenvolvimento focada em performance e evolução.',
     cta: 'Ver projeto',
   },
 ];
@@ -83,11 +83,18 @@ function App() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur-xl">
         <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 md:px-8">
           <a href="#" className="flex items-center gap-3 font-black tracking-tight">
-            <span className="grid h-9 w-9 place-items-center rounded-lg border border-nexus/40 bg-white/5 text-sm text-nexus shadow-violet">
-              ON
+            <span className="relative h-9 w-9 overflow-hidden rounded-lg border border-white/10 bg-white/5">
+              <img
+                src="/logo.png"
+                alt="O Nexus"
+                className="absolute -left-5 -top-6 h-[88px] w-[132px] max-w-none"
+              />
             </span>
             <span className="text-xl">
-              O <span className="text-nexus">Nexus</span>
+              O{' '}
+              <span className="bg-gradient-to-r from-[#38bdf8] to-nexus bg-clip-text text-transparent">
+                Nexus
+              </span>
             </span>
           </a>
 
@@ -251,7 +258,7 @@ function App() {
 
       <footer className="border-t border-white/10 px-5 py-8 md:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
-          <p>O Nexus · Tecnologia, automação e IA · 2026</p>
+          <p>O Nexus · Tecnologia, automação e IA</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-white">
               Privacidade
